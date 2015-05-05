@@ -105,16 +105,16 @@ function mparseInt(snum) {
     for(var i = 0; i < holds.length; i++){
         if(holds[i].op == '=' && holds[i+1] != undefined && holds[i+1].op == '*' && holds[i+1].val == '100'){
             if(holds[i+2]!=undefined && holds[i+2].op == '='){
-                console.log(i);
+                //console.log(i);
                 holdz.push({op: '=', val: (holds[i].val * 100 + holds[i+2].val)});
                 i+=2;
             }else{
-                console.log(i);
+                //console.log(i);
                 holdz.push({op: '=', val: (holds[i].val * 100 )});     
                 i++;
             }
         }else{
-            console.log(i);
+            //console.log(i);
             holdz.push(holds[i]);
         }
     }
