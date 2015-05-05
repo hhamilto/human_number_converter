@@ -1,6 +1,6 @@
-function mparseInt(snum){
-    console.log(1);
-    snum = $.trim(snum);
+function mparseInt(snum) {
+    var snum = snum.replace(/^\s+/,'').replace(/\s+$/,'');
+    //console.log('hi'+snum)
     var tokens = snum.split(/[\s-]+/);
     // with a 'z' because we are so very street, yo.
     var holdz = [];
@@ -82,7 +82,7 @@ function mparseInt(snum){
             holdz.push(hold);
         }
     }
-    console.log(holdz);
+    //console.log(holdz);
     var holds = [];
     var sum = 0;
     for(var i = 0; i < holdz.length; i++){
@@ -98,7 +98,7 @@ function mparseInt(snum){
             holds.push(holdz[i]);
         }
     }
-    console.log(holds);
+    //console.log(holds);
     
     //upgrade: fuck 100s. do them a better way
     var holdz = [];
@@ -118,7 +118,7 @@ function mparseInt(snum){
             holdz.push(holds[i]);
         }
     }
-    console.log(holdz);
+    //console.log(holdz);
             
     var multiplier = 1;
     for(var i = holdz.length - 1; i >= 0; i--){
@@ -132,4 +132,5 @@ function mparseInt(snum){
     return sum;
 }
  
-alert(mparseInt("five hundred sixty three trillion three hundred and three billion one hundred seventy six million three thousand and seventy nine").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+console.log(mparseInt("five hundred sixty three trillion three hundred and three billion one hundred seventy six million three thousand and seventy nine").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
